@@ -1,0 +1,7 @@
+.idea/
+.vscode/
+node_modules/
+*.zip
+asset/shell/
+*.map
+tmp/
