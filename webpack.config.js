@@ -14,9 +14,8 @@ const pug = require( PATH.webpackModules + '/pug'),
     devserver = require( PATH.webpackModules + '/devserver'),
     sass = require( PATH.webpackModules + '/sass'),
     extractCSS = require( PATH.webpackModules + '/css.extract'),
-    uglify = require( PATH.webpackModules + '/js.uglify');
-
-
+    uglify = require( PATH.webpackModules + '/js.uglify'),
+    images = require( PATH.webpackModules + '/images');
 
 const common = merge([
     {
@@ -27,7 +26,23 @@ const common = merge([
             path: PATH.build,
             filename: 'js/[name].js'
         },
-
+        module: {
+            rules:[
+                {
+                    test: /\.(jpg|png)$/,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: '[name].[ext]',
+                                outputPath: 'img/',
+                                publicPath: 'img/'
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
         plugins: [
             new HtmlWebpackPlugin({
                 filename: 'index.html',
@@ -39,9 +54,9 @@ const common = merge([
             }),
             new webpack.optimize.ModuleConcatenationPlugin(),
             new webpack.ProvidePlugin({
-                $: "jquery",
-                jQuery: "jquery",
-                "window.jQuery": "jquery"
+                $: 'jquery',
+                jQuery: 'jquery',
+                'window.jQuery': 'jquery'
             })
         ]
     },
@@ -63,7 +78,8 @@ module.exports = function (env) {
         return merge([
                 common,
                 sass(),
-                devserver()
+         //       images(),
+                 devserver()
             ]
         );
     }

@@ -4,14 +4,33 @@
   <title>Task-1</title>
 <link href="./css/index.css" rel="stylesheet"></head>
 <body>
-  <header>Header</header>
-  <nav>Menu
-    <ul>
-      <li>Link1</li>
-      <li>Link2</li>
-      <li>***</li>
-    </ul>
-  </nav>
-  <main>Content</main>
-  <footer>Footer</footer>
+  <div id="page">
+    <header>Header</header>
+    <nav>Menu
+      <ul>
+        <li>Link1</li>
+        <li>Link2</li>
+        <li>***</li>
+      </ul>
+    </nav>
+    <main>
+      <section class="videoPlayer">
+        <div class="clip">
+          <video id="player" width="500" height="300">
+            <source type="video/mp4" src="https://cs508509.userapi.com/5/u45606552/videos/ebc7e5fe40.240.mp4?extra=SBJd7snxbTWzErTPoCZOJuSQutGvsMkJBiGBG4yUi4w6vCbSca26jlCOg1KnUXVqdcjY4x6kGFNrxsSu08VAkHthqureWZ5GJBVHEZDDyNYDIg2qrRfgDuqlO970RS8_oERq7UKH-R-D">
+          </video>
+          <div id="control-bar">
+            <div>
+              <button id="play"></button><img width="100%">
+            </div>
+            <div>
+              <button id="forward-up"></button>
+              <button id="forward-down"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>Footer</footer>
+  </div>
 <script type="text/javascript" src="js/common.js"></script><script type="text/javascript" src="js/index.js"></script></body>

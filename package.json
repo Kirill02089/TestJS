@@ -37,9 +37,5 @@
     "webpack-merge": "^4.1.0",
     "write-file-webpack-plugin": "^4.1.0"
   },
-  "dependencies": {},
-  "pre-commit": [
-    "server",
-    "test"
-  ]
+  "dependencies": {}
 }

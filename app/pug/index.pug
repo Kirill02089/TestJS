@@ -3,12 +3,23 @@ head
     meta(charset='utf-8')
     title Task-1
 body
-    header Header
-    main
+    div#page
+        header Header
         nav Menu
             ul
                 li Link1
                 li Link2
                 li ***
-        section Content
-    footer Footer
+        main
+            section.videoPlayer
+                div.clip
+                    video#player(width=500, height='300')
+                        source(type='video/mp4', src='https://cs508509.userapi.com/5/u45606552/videos/ebc7e5fe40.240.mp4?extra=SBJd7snxbTWzErTPoCZOJuSQutGvsMkJBiGBG4yUi4w6vCbSca26jlCOg1KnUXVqdcjY4x6kGFNrxsSu08VAkHthqureWZ5GJBVHEZDDyNYDIg2qrRfgDuqlO970RS8_oERq7UKH-R-D')
+                    div#control-bar
+                        div
+                            button#play
+                            img(src=(request) width='100%')
+                        div
+                            button#forward-up
+                            button#forward-down
+        footer Footer
